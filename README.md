@@ -173,6 +173,111 @@ if __name__ == "__main__":
 
 <img width="801" height="536" alt="Screenshot 2026-07-03 222941" src="https://github.com/user-attachments/assets/29a09127-f95e-483a-9fa9-7f4849e95e0b" />
 
+# Assignment no: 10
+
+Question 1
+
+Write a program which accepts one number from user and return addition of its factors.
+```pythom
+
+def SumFactors(No):
+    Sum = 0
+
+    for i in range(1, No):
+        if No % i == 0:
+            Sum = Sum + i
+
+    return Sum
+
+def main():
+    Num = int(input("Enter number: "))
+    Ans = SumFactors(Num)
+    print("Addition of factors is:", Ans)
+
+if __name__ == "__main__":
+    main()
+```
+Question 2
+
+Write a program which accepts one number from user and return multiplication of its factors.
+```python
+
+def MultFactors(No):
+    Mult = 1
+
+    for i in range(1, No):
+        if No % i == 0:
+            Mult = Mult * i
+
+    return Mult
+
+def main():
+    Num = int(input("Enter number: "))
+    Ans = MultFactors(Num)
+    print("Multiplication of factors is:", Ans)
+
+if __name__ == "__main__":
+    main()
+```
+Question 3
+
+Write a program which accepts one number from user and display multiplication table of that number.
+```python
+
+def DisplayTable(No):
+    for i in range(1, 11):
+        print(No * i)
+
+def main():
+    Num = int(input("Enter number: "))
+    DisplayTable(Num)
+
+if __name__ == "__main__":
+    main()
+```
+Question 4
+
+Write a program which accepts one number from user and return the addition of first N natural numbers.
+```python
+def SumNatural(No):
+    Sum = 0
+
+    for i in range(1, No + 1):
+        Sum = Sum + i
+
+    return Sum
+
+def main():
+    Num = int(input("Enter number: "))
+    Ans = SumNatural(Num)
+    print("Addition is:", Ans)
+
+if __name__ == "__main__":
+    main()
+```
+Question 5
+
+Write a program which accepts one number from user and return factorial of that number.
+```python
+
+def Factorial(No):
+    Fact = 1
+
+    for i in range(1, No + 1):
+        Fact = Fact * i
+
+    return Fact
+
+def main():
+    Num = int(input("Enter number: "))
+    Ans = Factorial(Num)
+    print("Factorial is:", Ans)
+
+if __name__ == "__main__":
+    main()
+```
+
+<img width="802" height="762" alt="Screenshot 2026-07-03 225528" src="https://github.com/user-attachments/assets/080f0ed6-2c59-4256-973c-d4f58dda3746" />
 
 
 
