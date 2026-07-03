@@ -87,3 +87,92 @@ print("Largest =", largest(x, y, z)
 ```
 
 <img width="772" height="443" alt="Screenshot 2026-07-03 212616" src="https://github.com/user-attachments/assets/be763417-aa7a-4dc9-9ae9-a04835cd2e02" />
+
+# Assignment no: 09
+
+Question 1
+
+Write a program which contains one function named as Display() that prints "Jay Ganesh" on console.
+```python
+
+def Display():
+    print("Jay Ganesh")
+
+def main():
+    Display()
+
+if __name__ == "__main__":
+    main()
+```
+Question 2
+
+Write a program which contains one function ChkGreater() that accepts two numbers and prints the greater number.
+```python
+def ChkGreater(No1, No2):
+    if No1 > No2:
+        print(No1, "is greater")
+    else:
+        print(No2, "is greater")
+
+def main():
+    Value1 = int(input("Enter first number: "))
+    Value2 = int(input("Enter second number: "))
+    ChkGreater(Value1, Value2)
+
+if __name__ == "__main__":
+    main()
+```
+Question 3
+
+Write a program which accepts one number and prints square of that number.
+```python
+
+def Square(No):
+    print("Square is:", No * No)
+
+def main():
+    Num = int(input("Enter number: "))
+    Square(Num)
+
+if __name__ == "__main__":
+    main()
+```
+Question 4
+
+Write a program which accepts one number and prints cube of that number.
+```python
+
+def Cube(No):
+    print("Cube is:", No * No * No)
+
+def main():
+    Num = int(input("Enter number: "))
+    Cube(Num)
+
+if __name__ == "__main__":
+    main()
+```
+Question 5
+
+Write a program which accepts one number and checks whether it is divisible by 3 and 5.
+```python
+def Check(No):
+    if No % 3 == 0 and No % 5 == 0:
+        print("Divisible by 3 and 5")
+    else:
+        print("Not Divisible by 3 and 5")
+
+def main():
+    Num = int(input("Enter number: ")
+
+    Check(Num)
+
+if __name__ == "__main__":
+    main()
+```
+
+<img width="801" height="536" alt="Screenshot 2026-07-03 222941" src="https://github.com/user-attachments/assets/29a09127-f95e-483a-9fa9-7f4849e95e0b" />
+
+
+
+
