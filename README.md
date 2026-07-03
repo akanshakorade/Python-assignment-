@@ -387,4 +387,240 @@ if __name__ == "__main__":
 
 <img width="868" height="412" alt="Screenshot 2026-07-03 231141" src="https://github.com/user-attachments/assets/d520aaa0-239d-4721-ac7f-d930391988e0" />
 
+# Assignment 12
+
+Write a program which accepts one number and displays the multiplication of all factors of that number.
+```python
+def MultFactors(No):
+    Mult = 1
+
+    for i in range(1, No + 1):
+        if No % i == 0:
+            Mult = Mult * i
+
+    print("Multiplication of factors is:", Mult)
+
+def main():
+    Num = int(input("Enter number: "))
+    MultFactors(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 2
+
+Write a program which accepts one number and displays the addition of all digits of that number.
+```python
+def SumDigits(No):
+    Sum = 0
+
+    while No > 0:
+        Digit = No % 10
+        Sum = Sum + Digit
+        No = No // 10
+
+    print("Sum of digits is:", Sum)
+
+def main():
+    Num = int(input("Enter number: "))
+    SumDigits(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 3
+
+Write a program which accepts one number and displays the count of digits.
+```python
+def CountDigits(No):
+    Count = 0
+
+    while No > 0:
+        Count = Count + 1
+        No = No // 10
+
+    print("Number of digits is:", Count)
+
+def main():
+    Num = int(input("Enter number: "))
+    CountDigits(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 4
+```python
+
+Write a program which accepts one number and displays the reverse of that number.
+
+def Reverse(No):
+    Rev = 0
+
+    while No > 0:
+        Digit = No % 10
+        Rev = Rev * 10 + Digit
+        No = No // 10
+
+    print("Reverse number is:", Rev)
+
+def main():
+    Num = int(input("Enter number: "))
+    Reverse(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 5
+
+Write a program which accepts one number and checks whether it is a palindrome or not.
+```python
+def Palindrome(No):
+    Temp = No
+    Rev = 0
+
+    while No > 0:
+        Digit = No % 10
+        Rev = Rev * 10 + Digit
+        No = No // 10
+
+    if Temp == Rev:
+        print("Palindrome Number")
+    else:
+        print("Not Palindrome Number")
+
+def main():
+    Num = int(input("Enter number: "))
+    Palindrome(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+
+<img width="792" height="433" alt="Screenshot 2026-07-03 233114" src="https://github.com/user-attachments/assets/cd98c5b4-924f-4fc8-a71b-17f7e41c96b2" />
+# Assignment no: 13
+Question 1
+```python
+Write a program which accepts one number and checks whether it is an Armstrong number or not.
+
+def Armstrong(No):
+    Temp = No
+    Sum = 0
+
+    while No > 0:
+        Digit = No % 10
+        Sum = Sum + (Digit ** 3)
+        No = No // 10
+
+    if Temp == Sum:
+        print("Armstrong Number")
+    else:
+        print("Not Armstrong Number")
+
+def main():
+    Num = int(input("Enter number: "))
+    Armstrong(Num)
+
+if __name__ == "__main__":
+    main()
+```
+Question 2
+```python
+Write a program which accepts one number and returns the addition of even digits.
+
+def EvenDigitSum(No):
+    Sum = 0
+
+    while No > 0:
+        Digit = No % 10
+
+        if Digit % 2 == 0:
+            Sum = Sum + Digit
+
+        No = No // 10
+
+    print("Sum of even digits is:", Sum)
+
+def main():
+    Num = int(input("Enter number: "))
+    EvenDigitSum(Num)
+
+if __name__ == "__main__":
+    main()
+```
+Question 3
+
+Write a program which accepts one number and returns the multiplication of odd digits.
+
+def OddDigitMult(No):
+    Mult = 1
+
+    while No > 0:
+        Digit = No % 10
+
+        if Digit % 2 != 0:
+            Mult = Mult * Digit
+
+        No = No // 10
+
+    print("Multiplication of odd digits is:", Mult)
+
+def main():
+    Num = int(input("Enter number: "))
+    OddDigitMult(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 4
+
+Write a program which accepts one number and counts the frequency of digit 2.
+
+def CountTwo(No):
+    Count = 0
+
+    while No > 0:
+        Digit = No % 10
+
+        if Digit == 2:
+            Count = Count + 1
+
+        No = No // 10
+
+    print("Frequency of 2 is:", Count)
+
+def main():
+    Num = int(input("Enter number: "))
+    CountTwo(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 25
+```python
+
+Write a program which accepts one number and returns the difference between the summation of even digits and odd digits.
+
+def DigitDifference(No):
+    EvenSum = 0
+    OddSum = 0
+
+    while No > 0:
+        Digit = No % 10
+
+        if Digit % 2 == 0:
+            EvenSum = EvenSum + Digit
+        else:
+            OddSum = OddSum + Digit
+
+        No = No // 10
+
+    print("Difference is:", EvenSum - OddSum)
+
+def main():
+    Num = int(input("Enter number: "))
+    DigitDifference(Num)
+
+if __name__ == "__main__":
+    main()
+```
 
