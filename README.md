@@ -574,7 +574,7 @@ if __name__ == "__main__":
 Question 4
 
 Write a program which accepts one number and counts the frequency of digit 2.
-
+```python
 def CountTwo(No):
     Count = 0
 
@@ -623,4 +623,5 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+<img width="823" height="445" alt="Screenshot 2026-07-03 235533" src="https://github.com/user-attachments/assets/9ec3e624-7526-4790-9678-acf4857239d0" />
 
