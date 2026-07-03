@@ -1,3 +1,4 @@
+# Assignment no: 14
 Q1. Write a lambda function which accepts one number and returns square of that number.
 square = lambda x: x * x
 ```python
