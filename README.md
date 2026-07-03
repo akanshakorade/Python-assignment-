@@ -279,5 +279,112 @@ if __name__ == "__main__":
 
 <img width="802" height="762" alt="Screenshot 2026-07-03 225528" src="https://github.com/user-attachments/assets/080f0ed6-2c59-4256-973c-d4f58dda3746" />
 
+# Assignment no: 11
+
+Question 1
+
+Write a program which accepts one number and checks whether it is a perfect number or not.
+```python
+def Perfect(No):
+    Sum = 0
+
+    for i in range(1, No):
+        if No % i == 0:
+            Sum = Sum + i
+
+    if Sum == No:
+        print("Perfect Number")
+    else:
+        print("Not Perfect Number")
+
+def main():
+    Num = int(input("Enter number: "))
+    Perfect(Num)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 2
+
+Write a program which accepts one number and displays its factors.
+```python
+def Factors(No):
+    for i in range(1, No + 1):
+        if No % i == 0:
+            print(i, end=" ")
+
+def main():
+    Num = int(input("Enter number: "))
+    Factors(Num)
+
+if __name__ == "__main__":
+    main()
+Question 3
+
+Write a program which accepts one number and returns the addition of all its factors.
+```python
+def SumFactors(No):
+    Sum = 0
+
+    for i in range(1, No + 1):
+        if No % i == 0:
+            Sum = Sum + i
+
+    return Sum
+
+def main():
+    Num = int(input("Enter number: "))
+    Ans = SumFactors(Num)
+    print("Sum of factors is:", Ans)
+
+if __name__ == "__main__":
+    main()
+    ````
+Question 4
+
+Write a program which accepts one number and returns the addition of its proper factors.
+```python
+def SumProperFactors(No):
+    Sum = 0
+
+    for i in range(1, No):
+        if No % i == 0:
+            Sum = Sum + i
+
+    return Sum
+
+def main():
+    Num = int(input("Enter number: "))
+    Ans = SumProperFactors(Num)
+    print("Sum of proper factors is:", Ans)
+
+if __name__ == "__main__":
+    main()
+    ```
+Question 5
+
+Write a program which accepts one number and checks whether it is a perfect number or not using the sum of proper factors.
+```python
+def CheckPerfect(No):
+    Sum = 0
+
+    for i in range(1, No):
+        if No % i == 0:
+            Sum = Sum + i
+
+    if Sum == No:
+        print("Perfect Number")
+    else:
+        print("Not Perfect Number")
+
+def main():
+    Num = int(input("Enter number: "))
+    CheckPerfect(Num)
+
+if __name__ == "__main__":
+    main()
+```
+
+<img width="868" height="412" alt="Screenshot 2026-07-03 231141" src="https://github.com/user-attachments/assets/d520aaa0-239d-4721-ac7f-d930391988e0" />
 
 
