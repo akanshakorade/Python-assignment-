@@ -258,6 +258,7 @@ if __name__ == "__main__":
 Question 5
 
 Write a program which accepts one number from user and return factorial of that number.
+
 ```python
 
 def Factorial(No):
@@ -304,7 +305,7 @@ def main():
 if __name__ == "__main__":
     main()
     ```
-Question 2
+ Question 2
 
 Write a program which accepts one number and displays its factors.
 ```python
@@ -448,11 +449,10 @@ def main():
 if __name__ == "__main__":
     main()
     ```
-Question 4
-```python
+ Question 4
 
 Write a program which accepts one number and displays the reverse of that number.
-
+```python
 def Reverse(No):
     Rev = 0
 
@@ -470,7 +470,7 @@ def main():
 if __name__ == "__main__":
     main()
     ```
-Question 5
+# Question 5
 
 Write a program which accepts one number and checks whether it is a palindrome or not.
 ```python
@@ -498,10 +498,11 @@ if __name__ == "__main__":
 
 <img width="792" height="433" alt="Screenshot 2026-07-03 233114" src="https://github.com/user-attachments/assets/cd98c5b4-924f-4fc8-a71b-17f7e41c96b2" />
 # Assignment no: 13
-Question 1
-```python
+# Question 1
+
 Write a program which accepts one number and checks whether it is an Armstrong number or not.
 
+```python
 def Armstrong(No):
     Temp = No
     Sum = 0
@@ -524,9 +525,9 @@ if __name__ == "__main__":
     main()
 ```
 Question 2
-```python
-Write a program which accepts one number and returns the addition of even digits.
 
+Write a program which accepts one number and returns the addition of even digits.
+```python
 def EvenDigitSum(No):
     Sum = 0
 
@@ -550,7 +551,7 @@ if __name__ == "__main__":
 Question 3
 
 Write a program which accepts one number and returns the multiplication of odd digits.
-
+```python
 def OddDigitMult(No):
     Mult = 1
 
@@ -595,11 +596,10 @@ def main():
 if __name__ == "__main__":
     main()
     ```
-Question 25
+# Question 25
+
+# Write a program which accepts one number and returns the difference between the summation of even digits and odd digits.
 ```python
-
-Write a program which accepts one number and returns the difference between the summation of even digits and odd digits.
-
 def DigitDifference(No):
     EvenSum = 0
     OddSum = 0
@@ -624,4 +624,173 @@ if __name__ == "__main__":
     main()
 ```
 <img width="823" height="445" alt="Screenshot 2026-07-03 235533" src="https://github.com/user-attachments/assets/9ec3e624-7526-4790-9678-acf4857239d0" />
+# Assignment no : 15
+
+Question 1
+
+Write a lambda function using map() which accepts a list of numbers and returns a list of squares of each number.
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = list(map(lambda No: No * No, Data))
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="722" height="78" alt="Screenshot 2026-07-05 024519" src="https://github.com/user-attachments/assets/1fb7a3bd-78ae-4700-90d2-2e794ad4c63d" />
+
+Question 2
+
+Write a lambda function using filter() which accepts a list of numbers and returns a list of even numbers.
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = list(filter(lambda No: No % 2 == 0, Data))
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="733" height="82" alt="Screenshot 2026-07-05 024615" src="https://github.com/user-attachments/assets/814a9b75-20dc-46c8-862a-81751072c511" />
+
+Question 3
+
+Write a lambda function using filter() which accepts a list of numbers and returns a list of odd numbers.
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = list(filter(lambda No: No % 2 != 0, Data))
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="727" height="90" alt="Screenshot 2026-07-05 024717" src="https://github.com/user-attachments/assets/b32b8db3-95b8-4125-a231-6da67cc8c1e5" />
+
+Question 4
+
+Write a lambda function using reduce() which accepts a list of numbers and returns the addition of all elements.
+
+from functools import reduce
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = reduce(lambda A, B: A + B, Data)
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="723" height="83" alt="Screenshot 2026-07-05 024811" src="https://github.com/user-attachments/assets/367d6c1f-efc5-4f6b-af8d-c839510be31c" />
+
+Question 5
+
+Write a lambda function using reduce() which accepts a list of numbers and returns the maximum element.
+
+from functools import reduce
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = reduce(lambda A, B: A if A > B else B, Data)
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="752" height="83" alt="Screenshot 2026-07-05 024916" src="https://github.com/user-attachments/assets/aff93fb8-7265-4d9b-8abe-351653a7a74f" />
+
+Question 6
+
+Write a lambda function using reduce() which accepts a list of numbers and returns the minimum element.
+
+from functools import reduce
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = reduce(lambda A, B: A if A < B else B, Data)
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="712" height="73" alt="Screenshot 2026-07-05 025006" src="https://github.com/user-attachments/assets/71d1914b-fb42-46e5-9eda-d6112493582e" />
+
+Question 7
+
+Write a lambda function using filter() which accepts a list of strings and returns a list of strings having length greater than 5.
+```python
+def main():
+    Data = input("Enter strings : ").split()
+
+    Result = list(filter(lambda Str: len(Str) > 5, Data))
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="702" height="80" alt="Screenshot 2026-07-05 025049" src="https://github.com/user-attachments/assets/68a27181-cef3-4a94-b90a-637df2fa2cb3" />
+
+Question 8
+
+Write a lambda function using filter() which accepts a list of numbers and returns a list of numbers divisible by both 3 and 5.
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = list(filter(lambda No: No % 3 == 0 and No % 5 == 0, Data))
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="708" height="71" alt="Screenshot 2026-07-05 025128" src="https://github.com/user-attachments/assets/5f9f7da5-528d-4de9-a322-723974651a7b" />
+
+Question 9
+
+Write a lambda function using reduce() which accepts a list of numbers and returns the product of all elements.
+
+from functools import reduce
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = reduce(lambda A, B: A * B, Data)
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="718" height="92" alt="Screenshot 2026-07-05 025205" src="https://github.com/user-attachments/assets/ee19acd8-90e9-41c9-9a7e-c797d81e2c2d" />
+
+Question 10
+
+Write a lambda function using filter() which accepts a list of numbers and returns the count of even numbers.
+```python
+def main():
+    Data = list(map(int, input("Enter numbers : ").split()))
+
+    Result = list(filter(lambda No: No % 2 == 0, Data))
+
+    print("Count of Even Numbers :", len(Result))
+
+if __name__ == "__main__":
+    main()
+```
+<img width="738" height="97" alt="Screenshot 2026-07-05 025242" src="https://github.com/user-attachments/assets/083949b5-0d2c-4bc0-aa2e-b373bca9ea0b" />
 
