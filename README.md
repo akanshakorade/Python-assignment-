@@ -909,4 +909,372 @@ print("Length of name is:", length)
 <img width="797" height="967" alt="Screenshot 2026-07-08 214341" src="https://github.com/user-attachments/assets/6f272568-2f18-4943-8bc6-c1cabb723d8b" />
 <img width="1051" height="298" alt="Screenshot 2026-07-08 214408" src="https://github.com/user-attachments/assets/481d6b00-9419-4113-96ce-90a26ae04eaf" />
 
+Question 1
 
+Write a program which contains one lambda function which accepts one parameter and returns power of two.
+
+Code
+```python
+Power = lambda No: No ** 2
+
+Value = int(input("Enter number : "))
+
+Ans = Power(Value)
+
+print("Output :", Ans)
+Question 2
+
+Write a program which contains one lambda function which accepts two parameters and returns its multiplication.
+
+Code
+Multiplication = lambda A, B: A * B
+
+No1 = int(input("Enter first number : "))
+No2 = int(input("Enter second number : "))
+
+Ans = Multiplication(No1, No2)
+
+print("Output :", Ans)
+```
+Question 3
+
+Write a program which contains filter(), map() and reduce(). Accept a list of numbers from the user. Filter numbers greater than or equal to 70 and less than or equal to 90. Increase each filtered number by 10 using map(). Return the product of all numbers using reduce().
+
+Code
+```python
+from functools import reduce
+
+Data = list(map(int, input("Enter numbers : ").split()))
+
+FilterData = list(filter(lambda No: No >= 70 and No <= 90, Data))
+print("List after filter =", FilterData)
+
+MapData = list(map(lambda No: No + 10, FilterData))
+print("List after map =", MapData)
+
+Result = reduce(lambda A, B: A * B, MapData)
+
+print("Output of reduce =", Resultt
+```
+Question 4
+
+Write a program which contains filter(), map() and reduce(). Accept a list of numbers from the user. Filter all even numbers. Calculate the square of each number using map(). Return the addition of all numbers using reduce().
+
+Code
+```python
+from functools import reduce
+
+Data = list(map(int, input("Enter numbers : ").split()))
+
+FilterData = list(filter(lambda No: No % 2 == 0, Data))
+print("List after filter =", FilterData)
+
+MapData = list(map(lambda No: No * No, FilterData))
+print("List after map =", MapData)
+
+Result = reduce(lambda A, B: A + B, MapData)
+
+print("Output of reduce =", Result)
+```
+Question 5
+
+Write a program which contains filter(), map() and reduce(). Accept a list of numbers from the user. Filter all prime numbers. Multiply each number by 2 using map(). Return the maximum number using reduce().
+
+Code
+```python
+from functools import reduce
+
+def Prime(No):
+    if No < 2:
+        return False
+
+    for i in range(2, int(No ** 0.5) + 1):
+        if No % i == 0:
+            return False
+
+    return True
+
+Data = list(map(int, input("Enter numbers : ").split()))
+
+FilterData = list(filter(Prime, Data))
+print("List after filter =", FilterData)
+
+MapData = list(map(lambda No: No * 2, FilterData))
+print("List after map =", MapData)
+
+Result = reduce(lambda A, B: A if A > B else B, MapData)
+
+print("Output of reduce =", Result)
+```
+
+Question 6
+
+Write a program which creates two threads named evenlist and oddlist. Both threads accept a list of integers as a parameter. Evenlist adds all even elements from the list, while Oddlist adds all odd elements. Display both sums.
+
+Code
+```python
+import threading
+
+def EvenList(Data):
+    Sum = 0
+    for No in Data:
+        if No % 2 == 0:
+            Sum += No
+    print("Sum of even numbers :", Sum)
+
+def OddList(Data):
+    Sum = 0
+    for No in Data:
+        if No % 2 != 0:
+            Sum += No
+    print("Sum of odd numbers :", Sum)
+
+Data = list(map(int, input("Enter numbers : ").split()))
+
+T1 = threading.Thread(target=EvenList, args=(Data,))
+T2 = threading.Thread(target=OddList, args=(Data,))
+
+T1.start()
+T2.start()
+
+T1.join()
+T2.join()
+```
+Question 7
+
+Write a program which creates two threads. One thread displays factors of a number, and the other displays the sum of factors. Accept the number from the user.
+
+Code
+```python
+import threading
+
+def Factors(No):
+    print("Factors are :")
+    for i in range(1, No + 1):
+        if No % i == 0:
+            print(i)
+
+def SumFactors(No):
+    Sum = 0
+    for i in range(1, No + 1):
+        if No % i == 0:
+            Sum += i
+    print("Sum of factors :", Sum)
+
+Value = int(input("Enter number : "))
+
+T1 = threading.Thread(target=Factors, args=(Value,))
+T2 = threading.Thread(target=SumFactors, args=(Value,))
+
+T1.start()
+T2.start()
+
+T1.join()
+T2.join()
+```
+<img width="941" height="892" alt="Screenshot 2026-07-08 224208" src="https://github.com/user-attachments/assets/098a473c-76cf-4bdb-a8c2-f02f2248d77d" />
+<img width="777" height="938" alt="Screenshot 2026-07-08 224323" src="https://github.com/user-attachments/assets/cc41d255-e312-4137-b99f-6dd6fdfe54a0" />
+<img width="98" height="911" alt="Screenshot 2026-07-08 224340" src="https://github.com/user-attachments/assets/a69db964-b63a-4d61-a033-4a532d3756cb" />
+
+# Assignment no : 21
+
+Question 1:
+
+Design a Python application that creates two separate threads named Even and Odd.
+
+Even thread should display first 10 even numbers.
+Odd thread should display first 10 odd numbers.
+Code:
+```python
+import threading
+
+def Even():
+    print("First 10 Even Numbers:")
+    for i in range(2, 21, 2):
+        print(i)
+
+def Odd():
+    print("First 10 Odd Numbers:")
+    for i in range(1, 20, 2):
+        print(i)
+
+t1 = threading.Thread(target=Even, name="Even")
+t2 = threading.Thread(target=Odd, name="Odd")
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+Question 2:
+
+Design a Python application that creates two threads named EvenFactor and OddFactor.
+
+Accept one integer.
+EvenFactor thread displays even factors and their sum.
+OddFactor thread displays odd factors and their sum.
+After completion display "Exit from main".
+Code:
+```python
+import threading
+
+def EvenFactor(no):
+    s = 0
+    print("Even Factors:")
+    for i in range(1, no + 1):
+        if no % i == 0 and i % 2 == 0:
+            print(i)
+            s += i
+    print("Sum of Even Factors:", s)
+
+def OddFactor(no):
+    s = 0
+    print("Odd Factors:")
+    for i in range(1, no + 1):
+        if no % i == 0 and i % 2 != 0:
+            print(i)
+            s += i
+    print("Sum of Odd Factors:", s)
+
+num = int(input("Enter number: "))
+
+t1 = threading.Thread(target=EvenFactor, args=(num,))
+t2 = threading.Thread(target=OddFactor, args=(num,))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Exit from main")
+```
+Question 3:
+
+Design a Python application that creates two threads named EvenList and OddList.
+
+Accept a list of integers.
+EvenList thread displays even numbers and their sum.
+OddList thread displays odd numbers and their sum.
+Code:
+```python
+import threading
+
+def EvenList(arr):
+    even = []
+    s = 0
+
+    for i in arr:
+        if i % 2 == 0:
+            even.append(i)
+            s += i
+
+    print("Even Elements:", even)
+    print("Sum of Even Elements:", s)
+
+def OddList(arr):
+    odd = []
+    s = 0
+
+    for i in arr:
+        if i % 2 != 0:
+            odd.append(i)
+            s += i
+
+    print("Odd Elements:", odd)
+    print("Sum of Odd Elements:", s)
+
+arr = list(map(int, input("Enter elements: ").split()))
+
+t1 = threading.Thread(target=EvenList, args=(arr,))
+t2 = threading.Thread(target=OddList, args=(arr,))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
+Question 4:
+
+Design a Python application that creates three threads named Small, Capital and Digits.
+
+Accept a string.
+Count lowercase, uppercase and digits.
+Display Thread ID and Thread Name.
+Code:
+```python
+import threading
+
+def Small(s):
+    c = 0
+    for ch in s:
+        if ch.islower():
+            c += 1
+    print("Thread ID:", threading.get_ident())
+    print("Thread Name:", threading.current_thread().name)
+    print("Lowercase Count:", c)
+
+def Capital(s):
+    c = 0
+    for ch in s:
+        if ch.isupper():
+            c += 1
+    print("Thread ID:", threading.get_ident())
+    print("Thread Name:", threading.current_thread().name)
+    print("Uppercase Count:", c)
+
+def Digits(s):
+    c = 0
+    for ch in s:
+        if ch.isdigit():
+            c += 1
+    print("Thread ID:", threading.get_ident())
+    print("Thread Name:", threading.current_thread().name)
+    print("Digit Count:", c)
+
+str1 = input("Enter string: ")
+
+t1 = threading.Thread(target=Small, args=(str1,), name="Small")
+t2 = threading.Thread(target=Capital, args=(str1,), name="Capital")
+t3 = threading.Thread(target=Digits, args=(str1,), name="Digits")
+
+t1.start()
+t2.start()
+t3.start()
+
+t1.join()
+t2.join()
+t3.join()
+```
+Question 5:
+
+Design a Python application that creates two threads named Thread1 and Thread2.
+
+Thread1 displays numbers 1 to 50.
+Thread2 displays numbers 50 to 1.
+Thread2 starts only after Thread1 completes.
+Code:
+```python
+import threading
+
+def Thread1():
+    print("Numbers from 1 to 50:")
+    for i in range(1, 51):
+        print(i)
+
+def Thread2():
+    print("Numbers from 50 to 1:")
+    for i in range(50, 0, -1):
+        print(i)
+
+t1 = threading.Thread(target=Thread1)
+t2 = threading.Thread(target=Thread2)
+
+t1.start()
+t1.join()
+
+t2.start()
+t2.join()
+```
+<img width="737" height="422" alt="Screenshot 2026-07-08 225518" src="https://github.com/user-attachments/assets/f6b5ef89-b0e4-40c1-8a65-5ca20692e856" />
