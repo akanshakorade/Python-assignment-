@@ -794,3 +794,119 @@ if __name__ == "__main__":
 ```
 <img width="738" height="97" alt="Screenshot 2026-07-05 025242" src="https://github.com/user-attachments/assets/083949b5-0d2c-4bc0-aa2e-b373bca9ea0b" />
 
+
+# Assignment no :16
+
+Q1. Write a program which contains one function named as Fun(). That function should display "Hello from Fun" on console.
+```python
+def Fun():
+    print("Hello from Fun")
+
+Fun()
+```
+
+Q2. Write a program which contains one function named as ChkNum() which accepts one parameter as number. If number is even then display "Even Number" otherwise display "Odd Number".
+```python
+def ChkNum(no):
+    if no % 2 == 0:
+        print("Even Number")
+    else:
+        print("Odd Number")
+
+value = int(input("Enter number: "))
+ChkNum(value)
+```
+
+Q3. Write a program which contains one function named as Add() which accepts two numbers from user and returns addition of that two numbers.
+```python
+def Add(no1, no2):
+    return no1 + no2
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+ans = Add(num1, num2)
+print("Addition is:", ans)
+```
+
+Q4. Write a program which displays 5 times "Marvellous" on screen.
+```python
+def Display():
+    for i in range(5):
+        print("Marvellous")
+
+Display()
+```
+
+Q5. Write a program which displays 10 to 1 on screen.
+```python
+def Display():
+    for i in range(10, 0, -1):
+        print(i)
+
+Display()
+```
+
+
+Q6. Write a program which accepts one number from user and checks whether it is Positive, Negative or Zero.
+```python
+def ChkNum(no):
+    if no > 0:
+        print("Positive Number")
+    elif no < 0:
+        print("Negative Number")
+    else:
+        print("Zero")
+
+value = int(input("Enter number: "))
+ChkNum(value)
+```
+
+Q7. Write a program which contains one function that accepts one number from user and returns True if number is divisible by 5 otherwise returns False.
+```python
+def ChkNum(no):
+    if no % 5 == 0:
+        return True
+    else:
+        return False
+
+value = int(input("Enter number: "))
+
+result = ChkNum(value)
+print(result)
+```
+
+Q8. Write a program which accepts one number from user and prints that number of "*" on screen.
+```python
+def Display(no):
+    for i in range(no):
+        print("*", end=" ")
+
+value = int(input("Enter number: "))
+Display(value)
+```
+
+Q9. Write a program which displays first 10 even numbers on screen.
+```python
+def Display():
+    for i in range(2, 21, 2):
+        print(i, end=" ")
+
+Display()
+```
+
+Q10. Write a program which accepts name from user and displays length of its name.
+```python
+def NameLength(name):
+    return len(name)
+
+name = input("Enter your name: ")
+
+length = NameLength(name)
+print("Length of name is:", length)
+```
+
+<img width="797" height="967" alt="Screenshot 2026-07-08 214341" src="https://github.com/user-attachments/assets/6f272568-2f18-4943-8bc6-c1cabb723d8b" />
+<img width="1051" height="298" alt="Screenshot 2026-07-08 214408" src="https://github.com/user-attachments/assets/481d6b00-9419-4113-96ce-90a26ae04eaf" />
+
+
