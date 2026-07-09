@@ -178,8 +178,8 @@ if __name__ == "__main__":
 Question 1
 
 Write a program which accepts one number from user and return addition of its factors.
-```pythom
 
+```python
 def SumFactors(No):
     Sum = 0
 
@@ -597,7 +597,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-# Question 25
+# Question 5
 
 # Write a program which accepts one number and returns the difference between the summation of even digits and odd digits.
 ```python
@@ -1431,6 +1431,161 @@ if __name__ == "__main__":
     main()
 ```
 <img width="1907" height="746" alt="Screenshot 2026-07-09 143727" src="https://github.com/user-attachments/assets/ae98543b-8a9d-4b32-8ca8-28b727f7e5c6" />
+
+# Assignment no : 23
+
+Question 1
+
+Write a Python program using multiprocessing.Pool to calculate the sum of all even numbers from 1 to N for every number from the given list.
+```python
+import multiprocessing
+import os
+
+def SumEven(N):
+    total = 0
+    for i in range(2, N + 1, 2):
+        total += i
+
+    print("Process ID :", os.getpid())
+    print("Input Number :", N)
+    print("Sum of Even Numbers :", total)
+    print()
+
+def main():
+    Data = [1000000, 2000000, 3000000, 4000000]
+
+    p = multiprocessing.Pool()
+    p.map(SumEven, Data)
+
+    p.close()
+    p.join()
+
+if __name__ == "__main__":
+    main()
+```
+Question 2
+
+Write a Python program using multiprocessing.Pool to calculate the sum of all odd numbers from 1 to N for every number from the given list.
+
+import multiprocessing
+import os
+```python
+def SumOdd(N):
+    total = 0
+    for i in range(1, N + 1, 2):
+        total += i
+
+    print("Process ID :", os.getpid())
+    print("Input Number :", N)
+    print("Sum of Odd Numbers :", total)
+    print()
+
+def main():
+    Data = [1000000, 2000000, 3000000, 4000000]
+
+    p = multiprocessing.Pool()
+    p.map(SumOdd, Data)
+
+    p.close()
+    p.join()
+
+if __name__ == "__main__":
+    main()
+```                                                                                            
+Program 3
+Question
+
+Write a Python program that counts how many even numbers exist between 1 and N using Pool.map().
+
+import multiprocessing
+import os
+
+def CountEven(N):
+    count = N // 2
+
+    print("Process ID :", os.getpid())
+    print("Input Number :", N)
+    print("Even Number Count :", count)
+    print()
+
+def main():
+    Data = [1000000, 2000000, 3000000, 4000000]
+
+    p = multiprocessing.Pool()
+    p.map(CountEven, Data)
+
+    p.close()
+    p.join()
+
+if __name__ == "__main__":
+    main()
+```
+Question 4
+
+Write a Python program that counts how many odd numbers exist between 1 and N using Pool.map().
+```python
+import multiprocessing
+import os
+
+def CountOdd(N):
+    count = (N + 1) // 2
+
+    print("Process ID :", os.getpid())
+    print("Input Number :", N)
+    print("Odd Number Count :", count)
+    print()
+
+def main():
+    Data = [1000000, 2000000, 3000000, 4000000]
+
+    p = multiprocessing.Pool()
+    p.map(CountOdd, Data)
+
+    p.close()
+    p.join()
+
+if __name__ == "__main__":
+    main()
+```
+Question 5
+
+Write a Python program that calculates factorials of multiple numbers simultaneously using multiprocessing.Pool.
+
+Input
+
+Data = [10, 15, 20, 25]
+
+Display
+
+Process ID
+Input Number
+Factorial
+import multiprocessing
+import math
+import os
+```python
+def Factorial(N):
+    print("Process ID :", os.getpid())
+    print("Input Number :", N)
+    print("Factorial :", math.factorial(N))
+    print()
+
+def main():
+    Data = [10, 15, 20, 25]
+
+    p = multiprocessing.Pool()
+    p.map(Factorial, Data)
+
+    p.close()
+    p.join()
+
+if __name__ == "__main__":
+    main()
+```
+<img width="666" height="737" alt="Screenshot 2026-07-09 151705" src="https://github.com/user-attachments/assets/e43cbad0-2ac2-41ed-a805-9fdc9feb3edf" />
+<img width="678" height="726" alt="Screenshot 2026-07-09 151726" src="https://github.com/user-attachments/assets/942e3c6c-8b2f-43bd-9cd1-c5daec7d3fb3" />
+<img width="687" height="342" alt="Screenshot 2026-07-09 151746" src="https://github.com/user-attachments/assets/53bf867d-5943-4f6b-82ee-afbcc63b1b70" />
+
 
 
 
