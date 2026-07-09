@@ -304,7 +304,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
  Question 2
 
 Write a program which accepts one number and displays its factors.
@@ -320,6 +320,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
 Question 3
 
 Write a program which accepts one number and returns the addition of all its factors.
@@ -340,7 +341,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ````
+```
 Question 4
 
 Write a program which accepts one number and returns the addition of its proper factors.
@@ -361,7 +362,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
 Question 5
 
 Write a program which accepts one number and checks whether it is a perfect number or not using the sum of proper factors.
@@ -407,7 +408,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
 Question 2
 
 Write a program which accepts one number and displays the addition of all digits of that number.
@@ -428,7 +429,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
 Question 3
 
 Write a program which accepts one number and displays the count of digits.
@@ -448,7 +449,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
  Question 4
 
 Write a program which accepts one number and displays the reverse of that number.
@@ -469,7 +470,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
 # Question 5
 
 Write a program which accepts one number and checks whether it is a palindrome or not.
@@ -494,7 +495,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
 
 <img width="792" height="433" alt="Screenshot 2026-07-03 233114" src="https://github.com/user-attachments/assets/cd98c5b4-924f-4fc8-a71b-17f7e41c96b2" />
 # Assignment no: 13
@@ -571,7 +572,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
 Question 4
 
 Write a program which accepts one number and counts the frequency of digit 2.
@@ -595,7 +596,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    ```
+```
 # Question 25
 
 # Write a program which accepts one number and returns the difference between the summation of even digits and odd digits.
@@ -922,11 +923,13 @@ Value = int(input("Enter number : "))
 Ans = Power(Value)
 
 print("Output :", Ans)
+```
 Question 2
 
 Write a program which contains one lambda function which accepts two parameters and returns its multiplication.
 
 Code
+```python
 Multiplication = lambda A, B: A * B
 
 No1 = int(input("Enter first number : "))
@@ -1106,6 +1109,7 @@ t2.start()
 
 t1.join()
 t2.join()
+```
 Question 2:
 
 Design a Python application that creates two threads named EvenFactor and OddFactor.
@@ -1278,3 +1282,155 @@ t2.start()
 t2.join()
 ```
 <img width="737" height="422" alt="Screenshot 2026-07-08 225518" src="https://github.com/user-attachments/assets/f6b5ef89-b0e4-40c1-8a65-5ca20692e856" />
+
+# Assignment no: 22
+
+Question 1
+
+Write a Python program that accepts a list of integers and uses Pool.map() to calculate the sum of squares from 1 to N for every element in the list.
+
+Input
+
+Data = [1000000, 2000000, 3000000, 4000000]
+import multiprocessing
+```python
+def SumSquares(N):
+    total = 0
+    for i in range(1, N + 1):
+        total += i * i
+    return total
+
+def main():
+    Data = [1000000, 2000000, 3000000, 4000000]
+
+    p = multiprocessing.Pool()
+    Result = p.map(SumSquares, Data)
+
+    p.close()
+    p.join()
+
+    print(Result)
+
+if __name__ == "__main__":
+    main()
+```
+Question 2
+
+Write a Python program that calculates factorials of multiple numbers simultaneously using Pool.map().
+
+Input
+
+Data = [10, 15, 20, 25]
+
+Display
+
+Process ID
+Input Number
+Factorial
+import multiprocessing
+import math
+import os
+```python
+def Factorial(N):
+    print("Process ID :", os.getpid())
+    print("Input Number :", N)
+    print("Factorial :", math.factorial(N))
+    print()
+
+def main():
+    Data = [10, 15, 20, 25]
+
+    p = multiprocessing.Pool()
+    p.map(Factorial, Data)
+
+    p.close()
+    p.join()
+
+if __name__ == "__main__":
+    main()
+```
+Question 3
+
+Write a Python program that accepts a list of integers and uses multiprocessing.Pool to count how many prime numbers exist between 1 and N for every element in the list.
+
+Input
+
+Data = [10000, 20000, 30000, 40000]
+import multiprocessing
+```python
+def IsPrime(No):
+    if No < 2:
+        return False
+
+    for i in range(2, int(No ** 0.5) + 1):
+        if No % i == 0:
+            return False
+
+    return True
+
+def PrimeCount(N):
+    Count = 0
+
+    for i in range(2, N + 1):
+        if IsPrime(i):
+            Count += 1
+
+    print("Prime Count up to", N, ":", Count)
+
+def main():
+    Data = [10000, 20000, 30000, 40000]
+
+    p = multiprocessing.Pool()
+
+    p.map(PrimeCount, Data)
+
+    p.close()
+    p.join()
+
+if __name__ == "__main__":
+    main()
+```
+
+Question 4
+
+Write a Python program that accepts a list of integers and uses multiprocessing.Pool to calculate the sum of 1⁵ + 2⁵ + 3⁵ + ... + N⁵ for every element in the list. Also display the total execution time.
+
+Input
+
+Data = [1000000, 2000000, 3000000, 4000000]
+import multiprocessing
+import time
+
+```python
+def SumPower(N):
+    Total = 0
+
+    for i in range(1, N + 1):
+        Total += i ** 5
+
+    return Total
+
+def main():
+    Data = [1000000, 2000000, 3000000, 4000000]
+
+    Start = time.time()
+
+    p = multiprocessing.Pool()
+
+    Result = p.map(SumPower, Data)
+
+    p.close()
+    p.join()
+
+    End = time.time()
+
+    print(Result)
+    print("Execution Time :", End - Start)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="1907" height="746" alt="Screenshot 2026-07-09 143727" src="https://github.com/user-attachments/assets/ae98543b-8a9d-4b32-8ca8-28b727f7e5c6" />
+
+
+
