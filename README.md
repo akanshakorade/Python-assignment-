@@ -1588,6 +1588,143 @@ if __name__ == "__main__":
 <img width="678" height="726" alt="Screenshot 2026-07-09 151726" src="https://github.com/user-attachments/assets/942e3c6c-8b2f-43bd-9cd1-c5daec7d3fb3" />
 <img width="687" height="342" alt="Screenshot 2026-07-09 151746" src="https://github.com/user-attachments/assets/53bf867d-5943-4f6b-82ee-afbcc63b1b70" />
 
+# Assignment 28
+# Q1) Count Lines in a File
+```python
+def CountLines(FileName):
+    try:
+        fobj = open(FileName, "r")
+
+        Count = 0
+        for line in fobj:
+            Count = Count + 1
+
+        fobj.close()
+        return Count
+
+    except FileNotFoundError:
+        return "File not found"
+
+def main():
+    Name = input("Enter file name : ")
+    Ret = CountLines(Name)
+    print("Total number of lines :", Ret)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="663" height="77" alt="Screenshot 2026-07-19 135134" src="https://github.com/user-attachments/assets/9e0e8b56-f41a-45f7-ad7d-fc707bdc50b4" />
+   
+    
+# Q2) Count Words in a File
+```python
+def CountWords(FileName):
+    try:
+        fobj = open(FileName, "r")
+
+        Count = 0
+        for line in fobj:
+            Words = line.split()
+            Count = Count + len(Words)
+
+        fobj.close()
+        return Count
+
+    except FileNotFoundError:
+        return "File not found"
+
+def main():
+    Name = input("Enter file name : ")
+    Ret = CountWords(Name)
+    print("Total number of words :", Ret)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="841" height="81" alt="Screenshot 2026-07-19 140813" src="https://github.com/user-attachments/assets/6dd2e8cf-a7aa-422a-857e-0ce94197696e" />
+
+ # Q3) Display File Line by Line
+```python
+def Display(FileName):
+    try:
+        fobj = open(FileName, "r")
+
+        for line in fobj:
+            print(line, end="")
+
+        fobj.close()
+
+    except FileNotFoundError:
+        print("File not found")
+
+def main():
+    Name = input("Enter file name : ")
+    Display(Name)
+
+if __name__ == "__main__":
+    main()
+```
+    
+ # Q4) Copy File Contents into Another File
+```python
+def CopyFile(Source, Destination):
+    try:
+        fsrc = open(Source, "r")
+        fdest = open(Destination, "w")
+
+        Data = fsrc.read()
+        fdest.write(Data)
+
+        fsrc.close()
+        fdest.close()
+
+        print("Contents copied successfully")
+
+    except FileNotFoundError:
+        print("Source file not found")
+
+def main():
+    Src = input("Enter source file : ")
+    Dest = input("Enter destination file : ")
+
+    CopyFile(Src, Dest)
+
+if __name__ == "__main__":
+    main()
+```    
+ # 5 Search a Word in File
+```python
+def SearchWord(FileName, Word):
+    try:
+        fobj = open(FileName, "r")
+
+        Data = fobj.read()
+
+        if Word in Data:
+            print("Word found")
+        else:
+            print("Word not found")
+
+        fobj.close()
+
+    except FileNotFoundError:
+        print("File not found")
+
+def main():
+    Name = input("Enter file name : ")
+    Word = input("Enter word : ")
+
+    SearchWord(Name, Word)
+
+if __name__ == "__main__":
+    main()            
+```
+
+<img width="656" height="387" alt="Screenshot 2026-07-19 140945" src="https://github.com/user-attachments/assets/425e256c-92b8-4b6e-917e-b7df5e23d400" />
+
+            
+    
+
 
 
 
