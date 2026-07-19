@@ -498,7 +498,9 @@ if __name__ == "__main__":
 ```
 
 <img width="792" height="433" alt="Screenshot 2026-07-03 233114" src="https://github.com/user-attachments/assets/cd98c5b4-924f-4fc8-a71b-17f7e41c96b2" />
+
 # Assignment no: 13
+
 # Question 1
 
 Write a program which accepts one number and checks whether it is an Armstrong number or not.
