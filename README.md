@@ -1722,6 +1722,139 @@ if __name__ == "__main__":
 
 <img width="656" height="387" alt="Screenshot 2026-07-19 140945" src="https://github.com/user-attachments/assets/425e256c-92b8-4b6e-917e-b7df5e23d400" />
 
+# Assignment 29
+# Q1) Check File Exists in Current Directory
+```python
+import os
+
+def CheckFile(FileName):
+    if os.path.exists(FileName):
+        print("File exists")
+    else:
+        print("File does not exist")
+
+def main():
+    Name = input("Enter file name : ")
+    CheckFile(Name)
+
+if __name__ == "__main__":
+    main()
+```
+<img width="637" height="82" alt="Screenshot 2026-07-20 130302" src="https://github.com/user-attachments/assets/108e0088-2cca-4b22-b59d-f6ca6f7463c4" />
+
+# Q2) Display File Contents
+```python
+def Display(FileName):
+    try:
+        fobj = open(FileName, "r")
+
+        Data = fobj.read()
+        print(Data)
+
+        fobj.close()
+
+    except FileNotFoundError:
+        print("File not found")
+
+def main():
+    Name = input("Enter file name : ")
+    Display(Name)
+
+
+if __name__ == "__main__":
+    main()
+```
+<img width="645" height="95" alt="Screenshot 2026-07-20 130441" src="https://github.com/user-attachments/assets/e44af3f8-c171-43b5-b4c2-245aa65bd8d8" />
+
+# Q3) Copy File Contents into a New File (Command Line)
+```python
+import sys
+
+def CopyFile(Source):
+    try:
+        fsrc = open(Source, "r")
+        fdest = open("Demo.txt", "w")
+
+        Data = fsrc.read()
+        fdest.write(Data)
+
+        fsrc.close()
+        fdest.close()
+
+        print("Contents copied successfully")
+
+    except FileNotFoundError:
+        print("File not found")
+
+def main():
+    CopyFile(sys.argv[1])
+
+if __name__ == "__main__":
+    main()
+```
+<img width="725" height="45" alt="Screenshot 2026-07-20 130610" src="https://github.com/user-attachments/assets/295e87db-688d-4406-8678-b2f97c10d127" />
+
+# Q4) Compare Two Files (Command Line)
+```python
+import sys
+
+def CompareFiles(File1, File2):
+    try:
+        fobj1 = open(File1, "r")
+        fobj2 = open(File2, "r")
+
+        Data1 = fobj1.read()
+        Data2 = fobj2.read()
+
+        if Data1 == Data2:
+            print("Success")
+        else:
+            print("Failure")
+
+        fobj1.close()
+        fobj2.close()
+
+    except FileNotFoundError:
+        print("File not found")
+
+def main():
+    CompareFiles(sys.argv[1], sys.argv[2])
+
+if __name__ == "__main__":
+    main()
+```
+<img width="871" height="52" alt="Screenshot 2026-07-20 130701" src="https://github.com/user-attachments/assets/ff10f043-9864-46b6-88a1-84c9334ba325" />
+
+
+# Q5) Frequency of a String in File
+```python
+def Frequency(FileName, Word):
+    try:
+        fobj = open(FileName, "r")
+
+        Data = fobj.read()
+
+        Count = Data.count(Word)
+
+        print("Frequency :", Count)
+
+        fobj.close()
+
+    except FileNotFoundError:
+        print("File not found")
+
+def main():
+    Name = input("Enter file name : ")
+    Word = input("Enter word : ")
+
+    Frequency(Name, Word)
+
+if __name__ == "__main__":
+    main()   
+```
+<img width="877" height="96" alt="Screenshot 2026-07-20 130740" src="https://github.com/user-attachments/assets/aee821b7-e6b5-49eb-8a3a-9b7c65447532" />
+
+
             
     
 
